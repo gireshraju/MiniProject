@@ -1,0 +1,66 @@
+import React, { useState,useContext } from 'react';
+import axios from 'axios';
+import { store } from '../App';
+import Graph from './teacherlogin/Graph';
+
+const Teacherlogin = () => {
+  const [data,setData]=useState([]);
+
+  // eslint-disable-next-line
+ const [idtemp1,setidtemp1]=useContext(store);    
+ const [idtemp2,setidtemp2]=useState("");   
+
+    const fetchdata=async ()=>{
+      try{
+        const res=await axios.get("http://localhost:8900/studentsuggestions/"+idtemp2);
+        setData(res.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+     // eslint-disable-next-line
+    const displayall=async ()=>{
+      try{
+        const res=await axios.get("http://localhost:8900/teachersuggestions/"+idtemp1);
+        setData(res.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+
+    }
+
+  const a=data.map(d=>
+    <tr key={d.sid}>
+     <td>{d.sid==="" ? "Anonymous" :d.sid}</td>
+      <td>{d.sug}</td>
+    </tr>
+  )
+
+    
+  return (
+    <div className='container' id='change'>
+      <center>
+        <br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/>
+      <h1>In Teacher Login</h1><br/>
+      <input onChange={(e)=>setidtemp2(e.target.value)} placeholder='Enter Student id'></input><br/><br/>
+      <button onClick={fetchdata}>check</button><br/><br/>
+      <button onClick={displayall}>all data</button><br/><br/>
+      <br/> <br/> 
+      <h4>All Reviews Graph</h4><br/> 
+      <Graph />
+      <br/> <br/> <br/> <br/>
+      <table>
+        <th>Student</th>
+        <th>Suggestion</th>
+      {a}
+      </table>
+      <br/><br/><br/>
+      </center>
+    </div>
+  )
+}
+
+export default Teacherlogin

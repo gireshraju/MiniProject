@@ -1,0 +1,90 @@
+import React, { useState,useContext } from 'react';
+import axios from 'axios';
+import { store } from '../App';
+import Graph from './Graph';
+import './Teacherlogin.css';
+
+const Teacherlogin = () => {
+  const [data,setData]=useState([]);
+  const [sug,setSug]=useState("");
+  // eslint-disable-next-line
+ const [idtemp1,setidtemp1]=useContext(store);    
+ const [idtemp2,setidtemp2]=useState("");   
+
+    const fetchdata=async ()=>{
+      try{
+        const res=await axios.get("http://localhost:8900/studentsuggestions/"+idtemp2);
+        setData(res.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+     // eslint-disable-next-line
+    const displayall=async ()=>{
+      try{
+        const res=await axios.get("http://localhost:8900/teachersuggestions/"+idtemp1);
+        setData(res.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+
+    }
+
+  const a=data.map(d=>
+                       <div key={d.sid} class="profile-cont">
+                       <div class="profile-picture">  
+                            <h2 class="profile-name">{d.sid==="" ? "Anonymous" :d.sid}</h2>
+                            <button className='newbtn' onClick={()=>setSug(d.sug)}>show</button>
+                      </div>
+                </div>
+
+
+  )
+displayall();
+    
+  return (
+
+      <div class="cont">
+            
+            <div class="leftbox">     
+             <div class="sb" >
+                <u class="lboxheading"><b>SUGGESTION BOX</b></u><br/> 
+                <input type='text' className='searchbar' onChange={(e)=>setidtemp2(e.target.value)} placeholder='Enter Student id'></input>
+                <button className='btn' onClick={fetchdata}>check</button>  
+              
+                 <div  class="chats"> 
+                   <div class="scroll-cont">
+                   {a}
+
+
+                    </div> 
+                   </div>
+     
+                 </div>
+                 </div>
+                 <div class="rightbox">
+                       <div class="chattext">
+                       <div class="chat-container">
+                             <div class="chat-messages" id="chatMessages">
+                              <p>{sug}</p>
+                             </div>
+                             <div class="chat-input">
+                               <input type="text" id="messageInput" placeholder="Type your message..."/>
+                               <button id="sendButton">Send</button>
+                             </div>
+                           </div>
+                 </div>
+                 <div class="graph">       
+                            <Graph className="g" />
+                 </div>
+          
+          </div>
+     
+         </div>
+     
+  );
+}
+
+export default Teacherlogin

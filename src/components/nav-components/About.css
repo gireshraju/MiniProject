@@ -1,0 +1,202 @@
+.header {
+    background-color: rgba(9, 9, 227);
+    height: 100px;
+}
+.banner {
+    margin-top: 50px;
+}
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 0 auto;
+}
+.b1, .bcontent, .bimg {
+    flex: 1;
+}
+.b1 {
+    background-color: rgb(9, 9, 227);
+    height: 440px;
+}
+.bcontent {
+    background-color: white;
+    padding: 20px;
+}
+.bcontent h1 {
+    font-size: 50px;
+}
+.bcontent h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.bcontent button {
+    font-size: 18px;
+    height: 50px;
+    width: 150px;
+    margin-top: 10px;
+}
+.bimg {
+    text-align: center;
+}
+.bimg img {
+    max-width: 100%;
+    height: auto;
+}
+.bimg img,
+.weimg img {
+    height: 100%; /* Set a fixed height for the images */
+    width: auto; /* Maintain aspect ratio */
+}
+.services-heading {
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-box {
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-icon {
+    background-color:  #FF416C;
+    height: 110px;
+    width: 110px;
+    margin: 0 auto 20px;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.service-icon i {
+    color: azure;
+}
+
+.service-box h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: blue;
+}
+
+.service-box h5 {
+    font-size: 16px;
+}
+
+/* What We Do Styling */
+.what-we-do {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    max-height: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.col-1, .col-3 {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+.col-1 h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width:1024px) {
+    .col-3{
+        height: 630px !important;
+        
+    }
+    .weimg img{
+        height: 500px !important;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .suggestion{
+        font-size: 30px !important;
+    }
+}
+
+
+
+.col-1 h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.col-3{
+    background-color:  #FF416C;
+}
+
+.col-3 h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.weimg img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+    .b1, .bcontent, .bimg {
+        flex: none;
+        width: 100%;
+    }
+
+    .bcontent h1 {
+        font-size: 40px;
+    }
+
+    .bcontent h3 {
+        font-size: 16px;
+    }
+
+    .bcontent button {
+        font-size: 16px;
+        height: 40px;
+        width: 120px;
+        margin-top: 10px;
+    }
+
+    .service-box {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .service-icon {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+    }
+
+    .service-box h3 {
+        font-size: 1.2em;
+    }
+
+    .service-box h5 {
+        font-size: 14px;
+    }
+
+    .col-1, .col-3 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+
+
+
+.feedback{
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+
+.toc {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+#submit-anonymous-feedback {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#submit-normal-feedback {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.content {
+    margin-top: 20px;
+}
+
+

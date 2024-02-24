@@ -1,0 +1,44 @@
+
+
+
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.toc {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+.content {
+    margin-top: 20px;
+}
+#teja{
+    
+    text-align: left;
+}
+#view-feedback1 , #view-feedback3, 
+#view-feedbackg1 , #view-feedbackg3{
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.feedback{
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+
+
